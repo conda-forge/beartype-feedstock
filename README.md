@@ -5,7 +5,7 @@ Home: https://github.com/beartype/beartype
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Unbearably fast runtime type checking in pure Python.
 
