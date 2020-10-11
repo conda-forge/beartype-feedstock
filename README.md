@@ -5,9 +5,13 @@ Home: https://github.com/beartype/beartype
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/beartype-feedstock/blob/master/LICENSE.txt)
 
 Summary: Unbearably fast runtime type checking in pure Python.
+
+Development: https://github.com/beartype/beartype
+
+Documentation: https://github.com/beartype/beartype/blob/master/README.rst
 
 Beartype is an open-source pure-Python runtime type checker emphasizing
 efficiency, portability, and thrilling puns. Unlike comparable static type
