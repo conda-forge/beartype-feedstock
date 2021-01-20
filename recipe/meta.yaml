@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -56,7 +56,7 @@ about:
     worst case) as equivalent type-checking implemented by hand. Beartype thus
     brings Rust- and C++-inspired zero-cost abstractions into the deliciously
     lawless world of pure Python.
-  doc_url: https://github.com/beartype/beartype/blob/master/README.rst
+  doc_url: https://github.com/beartype/beartype/blob/main/README.rst
   dev_url: https://github.com/beartype/beartype
 
 extra:
