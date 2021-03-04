@@ -1,6 +1,6 @@
 {% set name = "beartype" %}
-{% set version = "0.5.1" %}
-{% set sha256 = "195b1ea1834511b876507563808d8ca602d7cfb141ab9660c17a5148fb38eeb9" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "f6167aaa2691db46669f1c2e2aa1f2c38f456fe8a669fe9d3f2af6ed97d083ec" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
