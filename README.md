@@ -1,11 +1,11 @@
-About beartype
-==============
+About beartype-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/beartype-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/beartype/beartype
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/beartype-feedstock/blob/main/LICENSE.txt)
 
 Summary: Unbearably fast runtime type checking in pure Python.
 
