@@ -7,29 +7,14 @@ Home: https://github.com/beartype/beartype
 
 Package license: MIT
 
-Summary: Unbearably fast runtime type checking in pure Python.
+Summary: Unbearably fast near-real-time hybrid runtime-static type-checking. Unbearably fast runtime type checking in pure Python.
 
 Development: https://github.com/beartype/beartype
 
-Documentation: https://github.com/beartype/beartype/blob/main/README.rst
+Documentation: https://beartype.readthedocs.io
 
-Beartype is an open-source pure-Python runtime type checker emphasizing
-efficiency, portability, and thrilling puns. Unlike comparable static type
-checkers operating at the coarse-grained application level (e.g., Pyre,
-mypy, pyright, pytype), beartype operates exclusively at the fine-grained
-callable level of pure-Python functions and methods via the standard
-decorator design pattern. This renders beartype natively compatible with
-all interpreters and compilers targeting the Python language – including
-CPython, PyPy, and Numba. Unlike comparable runtime type checkers (e.g.,
-pytypes, typeguard), beartype wraps each decorated callable with a
-dynamically generated wrapper efficiently type-checking that specific
-callable. Since "performance by default" is our first-class concern, all
-wrappers are guaranteed to exhibit O(1) time complexity with negligible
-constant factors and be either more efficient (in the common case) or
-exactly as efficient minus the cost of an additional stack frame (in the
-worst case) as equivalent type-checking implemented by hand. Beartype thus
-brings Rust- and C++-inspired zero-cost abstractions into the deliciously
-lawless world of pure Python.
+Beartype is an open-source PEP-compliant near-real-time pure-Python runtime
+type checker emphasizing efficiency, usability, and thrilling puns.
 
 
 Current build status

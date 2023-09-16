@@ -1,6 +1,6 @@
 {% set name = "beartype" %}
-{% set version = "0.15.0" %}
-{% set sha256 = "2af6a8d8a7267ccf7d271e1a3bd908afbc025d2a09aa51123567d7d7b37438df" %}
+{% set version = "0.16.0" %}
+{% set sha256 = "231379a056da2fc1811a2e1324d5c3d0fa2082e305bfa15cb3acb9b7ce9df516" %}
 
 package:
   name: {{ name|lower }}
@@ -38,8 +38,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: Unbearably fast near-real-time hybrid runtime-static type-checking. 
-    Unbearably fast runtime type checking in pure Python.
+  summary: Unbearably fast near-real-time hybrid runtime-static type-checking. Unbearably fast runtime type checking in pure Python.
   description: |
     Beartype is an open-source PEP-compliant near-real-time pure-Python runtime
     type checker emphasizing efficiency, usability, and thrilling puns.
