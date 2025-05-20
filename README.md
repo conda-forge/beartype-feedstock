@@ -13,8 +13,9 @@ Development: https://github.com/beartype/beartype
 
 Documentation: https://beartype.readthedocs.io
 
-Beartype is an open-source PEP-compliant near-real-time pure-Python runtime
-type checker emphasizing efficiency, usability, and thrilling puns.
+Beartype is an open-source PEP-compliant near-real-time pure-Python hybrid
+runtime-static type checker emphasizing efficiency, usability, and thrilling
+puns.
 
 
 Current build status
