@@ -12,21 +12,22 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling >=1.14.0
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   requires:
     - pytest
+    - python {{ python_min }}
   source_files:
     - conftest.py
     - beartype_test
@@ -40,8 +41,9 @@ about:
   license_file: LICENSE
   summary: Unbearably fast near-real-time hybrid runtime-static type-checking. Unbearably fast runtime type checking in pure Python.
   description: |
-    Beartype is an open-source PEP-compliant near-real-time pure-Python runtime
-    type checker emphasizing efficiency, usability, and thrilling puns.
+    Beartype is an open-source PEP-compliant near-real-time pure-Python hybrid
+    runtime-static type checker emphasizing efficiency, usability, and thrilling
+    puns.
   doc_url: https://beartype.readthedocs.io
   dev_url: https://github.com/beartype/beartype
 
