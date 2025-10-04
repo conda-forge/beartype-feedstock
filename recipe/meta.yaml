@@ -1,6 +1,6 @@
 {% set name = "beartype" %}
-{% set version = "0.22.1" %}
-{% set sha256 = "fdbf143959d63df13b2c6728d03e6f3158454b0d968d8fcf44537e06e44ade4c" %}
+{% set version = "0.22.2" %}
+{% set sha256 = "ff3a7df26af8d15fa87f97934f0f6d41bbdadca971c410819104998dd26013d2" %}
 
 package:
   name: {{ name|lower }}
