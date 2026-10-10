@@ -1,6 +1,6 @@
 {% set name = "beartype" %}
-{% set version = "0.22.9" %}
-{% set sha256 = "8f82b54aa723a2848a56008d18875f91c1db02c32ef6a62319a002e3e25a975f" %}
+{% set version = "0.23.0" %}
+{% set sha256 = "9d915ce043a2262ee3eb110d1c1c528179f06eb4145e375a750f72ddbdf40fa3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
