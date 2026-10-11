@@ -3,20 +3,15 @@ About beartype-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/beartype-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/beartype/beartype
+Home: https://pypi.org/project/beartype
 
 Package license: MIT
 
-Summary: Unbearably fast near-real-time hybrid runtime-static type-checking. Unbearably fast runtime type checking in pure Python.
+Summary: Unbearably fast near-real-time pure-Python runtime-static type-checker.
 
 Development: https://github.com/beartype/beartype
 
-Documentation: https://beartype.readthedocs.io
-
-Beartype is an open-source PEP-compliant near-real-time pure-Python hybrid
-runtime-static type checker emphasizing efficiency, usability, and thrilling
-puns.
-
+Documentation: https://beartype.readthedocs.io/
 
 Current build status
 ====================
@@ -197,5 +192,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@leycec](https://github.com/leycec/)
+* [@bollwyvl](https://github.com/bollwyvl/)
 
