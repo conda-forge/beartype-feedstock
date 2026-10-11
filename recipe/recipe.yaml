@@ -43,14 +43,37 @@ tests:
         - ${{ python_check_max }}.*
   - files:
       source:
+        - beartype_test/**
         - conftest.py
-        - beartype_test
+        - pytest.ini
+        - README.rst
     requirements:
       run:
         - python ${{ python_min }}.*
-        - pytest
+        # required
+        - pytest >=6.2.0
+        # simple optionals without services/network/install from [test-tox]
+        - click
+        - coverage
+        - numba
+        - numpy
+        - pandas
+        - pandera
+        - polars
+        - pygments
+        - rich-click
+        - sphinx
+        - typer
+        - typing_extensions
+        - xarray
     script:
-      - pytest -vv --tb=long --color=yes beartype_test
+      # test_make_beartype_file_finder_path_hook_index: may not expect as-installed package?
+      #         module_spec = file_finder.find_spec('beartype')
+      # >       assert isinstance(module_spec, ModuleSpec)
+      # E       AssertionError: assert False
+      # E        +  where False = isinstance(None, <class '_frozen_importlib.ModuleSpec'>)
+      - coverage run --source=beartype --branch -m pytest -vv --tb=long --color=yes beartype_test -k "not make_beartype_file_finder_path_hook_index"
+      - coverage report --show-missing --skip-covered --fail-under=89
 
 about:
   summary: Unbearably fast near-real-time pure-Python runtime-static type-checker.
