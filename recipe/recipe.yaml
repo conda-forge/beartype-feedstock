@@ -1,52 +1,65 @@
-{% set name = "beartype" %}
-{% set version = "0.23.1" %}
-{% set sha256 = "8b805f246b32931c74f2b321ea0939fe5bb2ff43c12a3eff19cc4c854b832e1d" %}
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "0.23.1"
+  python_check_max: "3.14"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: beartype
+  version: ${{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://files.pythonhosted.org/packages/source/b/beartype/beartype-${{ version }}.tar.gz
+  sha256: 8b805f246b32931c74f2b321ea0939fe5bb2ff43c12a3eff19cc4c854b832e1d
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - hatchling >=1.14.0
     - pip
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
 
-test:
-  requires:
-    - pytest
-    - python {{ python_min }}
-  source_files:
-    - conftest.py
-    - beartype_test
-  commands:
-    - pytest beartype_test
+tests:
+  - package_contents:
+      strict: true
+      files:
+        - etc/conda/test-files/beartype/**
+      site_packages:
+        - beartype/**
+        - beartype-${{ version }}.dist-info/**
+  - python:
+      imports: beartype
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+  - files:
+      source:
+        - conftest.py
+        - beartype_test
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest
+    script:
+      - pytest -vv --tb=long --color=yes beartype_test
 
 about:
-  home: https://github.com/beartype/beartype
+  summary: Unbearably fast near-real-time pure-Python runtime-static type-checker.
   license: MIT
-  license_family: MIT
   license_file: LICENSE
-  summary: Unbearably fast near-real-time hybrid runtime-static type-checking. Unbearably fast runtime type checking in pure Python.
-  description: |
-    Beartype is an open-source PEP-compliant near-real-time pure-Python hybrid
-    runtime-static type checker emphasizing efficiency, usability, and thrilling
-    puns.
-  doc_url: https://beartype.readthedocs.io
-  dev_url: https://github.com/beartype/beartype
+  homepage: https://pypi.org/project/beartype
+  repository: https://github.com/beartype/beartype
+  documentation: https://beartype.readthedocs.io
 
 extra:
   recipe-maintainers:
-    - leycec
+    - bollwyvl
