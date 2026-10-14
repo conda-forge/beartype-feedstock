@@ -3,6 +3,8 @@ schema_version: 1
 
 context:
   version: "0.23.1"
+  # A concrete "latest" python for the solve/import/`pip check` test rather than `*`,
+  # which only entails "some" python. Update after annual migration moves out of `python_rc`.
   python_check_max: "3.15"
 
 package:
