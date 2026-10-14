@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   version: "0.23.1"
-  python_check_max: "3.14"
+  python_check_max: "3.15"
 
 package:
   name: beartype
@@ -63,17 +63,19 @@ tests:
         - pygments
         - rich-click
         - sphinx
+        - sqlalchemy-with-asyncio
         - typer
         - typing_extensions
         - xarray
     script:
+      # see: https://github.com/beartype/beartype/issues/744
       # test_make_beartype_file_finder_path_hook_index: may not expect as-installed package?
       #         module_spec = file_finder.find_spec('beartype')
       # >       assert isinstance(module_spec, ModuleSpec)
       # E       AssertionError: assert False
       # E        +  where False = isinstance(None, <class '_frozen_importlib.ModuleSpec'>)
       - coverage run --source=beartype --branch -m pytest -vv --tb=long --color=yes beartype_test -k "not make_beartype_file_finder_path_hook_index"
-      - coverage report --show-missing --skip-covered --fail-under=89
+      - coverage report --show-missing --skip-covered --fail-under=90
 
 about:
   summary: Unbearably fast near-real-time pure-Python runtime-static type-checker.
