@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.23.1"
+  version: "0.23.2"
   # A concrete "latest" python for the solve/import/`pip check` test rather than `*`,
   # which only entails "some" python. Update after annual migration moves out of `python_rc`.
   python_check_max: "3.15"
@@ -12,8 +12,10 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/b/beartype/beartype-${{ version }}.tar.gz
-  sha256: 8b805f246b32931c74f2b321ea0939fe5bb2ff43c12a3eff19cc4c854b832e1d
+  # to be restored after release of 0.23.2
+  # url: https://files.pythonhosted.org/packages/source/b/beartype/beartype-${{ version }}.tar.gz
+  url: https://github.com/beartype/beartype/archive/0256357689a664f5adc2fdb6e959750d11ceba97.tar.gz
+  sha256: eb162ef225e8637678d6eee92e1aaf9928826c77fbd7e993263092d843411105
 
 build:
   number: 0
@@ -70,13 +72,7 @@ tests:
         - typing_extensions
         - xarray
     script:
-      # see: https://github.com/beartype/beartype/issues/744
-      # test_make_beartype_file_finder_path_hook_index: may not expect as-installed package?
-      #         module_spec = file_finder.find_spec('beartype')
-      # >       assert isinstance(module_spec, ModuleSpec)
-      # E       AssertionError: assert False
-      # E        +  where False = isinstance(None, <class '_frozen_importlib.ModuleSpec'>)
-      - coverage run --source=beartype --branch -m pytest -vv --tb=long --color=yes beartype_test -k "not make_beartype_file_finder_path_hook_index"
+      - coverage run --source=beartype --branch -m pytest -vv --tb=long --color=yes beartype_test
       - coverage report --show-missing --skip-covered --fail-under=90
 
 about:
