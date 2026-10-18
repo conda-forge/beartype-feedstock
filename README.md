@@ -3,29 +3,25 @@ About beartype-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/beartype-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/beartype/beartype
+Home: https://pypi.org/project/beartype
 
 Package license: MIT
 
-Summary: Unbearably fast near-real-time hybrid runtime-static type-checking. Unbearably fast runtime type checking in pure Python.
+Summary: Unbearably fast near-real-time pure-Python runtime-static type-checker.
 
 Development: https://github.com/beartype/beartype
 
-Documentation: https://beartype.readthedocs.io
-
-Beartype is an open-source PEP-compliant near-real-time pure-Python hybrid
-runtime-static type checker emphasizing efficiency, usability, and thrilling
-puns.
-
+Documentation: https://beartype.readthedocs.io/
 
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9945&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/beartype-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/beartype-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/beartype-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -48,31 +44,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `beartype` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install beartype
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install beartype
 ```
 
-It is possible to list all of the versions of `beartype` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add beartype
+# for installing globally
+pixi global install beartype
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `beartype` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search beartype --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search beartype --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search beartype --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -84,6 +122,8 @@ mamba repoquery whoneeds beartype --channel conda-forge
 # List dependencies of `beartype`:
 mamba repoquery depends beartype --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
